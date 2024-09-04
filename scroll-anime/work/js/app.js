@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   handleScrollIn();
 });
-
+//boxes-wrapper内の全ての要素を取得
 const handleScrollIn = () => {
   const targets = document.querySelectorAll(".boxes-wrapper");
 
@@ -12,7 +12,7 @@ const handleScrollIn = () => {
     rootMargin: "-20% 0px",
     threshold: [0]
   };
-
+//交差時に実行されるコールバック
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -22,7 +22,7 @@ const handleScrollIn = () => {
       }
     });
     };
-
+//IntersectionObserverのインスタンス化
     const observer = new IntersectionObserver(callback, options);
 
     target.forEach((target) => {
