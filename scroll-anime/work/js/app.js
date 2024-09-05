@@ -17,11 +17,13 @@ const handleScrollIn = () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("displayed");
-//一度アニメーションが適用されたら監視を外す
-        observer.unobserve(entry.target);
-      }
-    });
-    };
+        }else{entry.target.classList.remove("displayed");
+          }
+        });
+      };
+
+//下記は一度アニメーションが適用されたら監視を外す時に使用する！！
+//observer.unobserve(entry.target);
 
 //IntersectionObserverのインスタンス化
     const observer = new IntersectionObserver(callback, options);
@@ -31,3 +33,6 @@ const handleScrollIn = () => {
       observer.observe(box);
       });
     };
+
+
+
